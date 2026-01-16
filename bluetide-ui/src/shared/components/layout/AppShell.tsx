@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import { Sidebar } from './Sidebar'
+import { CommandRail } from './CommandRail'
 import { cn } from '@/shared/lib/utils'
 import { useRouterState } from '@tanstack/react-router'
 
@@ -15,14 +16,23 @@ export function AppShell({ children, showSidebar = true, fullBleed }: AppShellPr
     const isFullBleed = fullBleed ?? pathname.startsWith('/chat')
 
     return (
-        <div className="flex flex-1 overflow-hidden">
-            {showSidebar && <Sidebar className="hidden lg:flex" />}
-            <main className={cn(
-                "flex-1 overflow-auto",
-                !isFullBleed && "p-6"
-            )}>
-                {children}
-            </main>
+        <div className="flex h-full w-full overflow-hidden">
+            {/* Phase 1: Global Command Rail */}
+            <CommandRail />
+
+            {/* Main Layout Area (Offset by Rail width) */}
+            <div className="flex flex-1 pl-[64px] overflow-hidden">
+                {/* Phase 2: Contextual Sidebar (Context Panel) */}
+                {showSidebar && <Sidebar className="hidden lg:flex" />}
+
+                {/* Phase 3: Main Page Content */}
+                <main className={cn(
+                    "flex-1 overflow-auto bg-background",
+                    !isFullBleed && "p-8"
+                )}>
+                    {children}
+                </main>
+            </div>
         </div>
     )
 }

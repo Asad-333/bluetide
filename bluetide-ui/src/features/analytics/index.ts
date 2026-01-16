@@ -1,17 +1,16 @@
-import { AnalyticsProvider } from './context'
-import { MetricsGrid } from './components/MetricsGrid'
-import { AccuracyChart } from './components/AccuracyChart'
-import { SystemNodes } from './components/SystemNodes'
-import { IntelligenceGrid } from './components/IntelligenceGrid'
-import { DocumentStream } from './components/DocumentStream'
-import { AnalyticsFilters } from './components/AnalyticsFilters'
+import { AnalyticsProvider, useAnalytics } from './context'
+import { SmartMetricCards } from './components/SmartMetricCards'
+import { IntelligenceMatrix } from './components/IntelligenceMatrix'
+import { ExtractionConfidence } from './components/ExtractionConfidence'
+import { LiveProcessingQueue } from './components/LiveProcessingQueue'
+import { SidebarFilters } from './components/SidebarFilters'
 
 export const Analytics = {
     Root: AnalyticsProvider,
-    Metrics: MetricsGrid,
-    Accuracy: AccuracyChart,
-    Nodes: SystemNodes,
-    Intelligence: IntelligenceGrid,
-    Stream: DocumentStream,
-    Sidebar: AnalyticsFilters,
+    Metrics: SmartMetricCards,
+    Matrix: IntelligenceMatrix,
+    Confidence: ExtractionConfidence,
+    Queue: LiveProcessingQueue,
+    Sidebar: SidebarFilters,
+    useAnalytics,
 }

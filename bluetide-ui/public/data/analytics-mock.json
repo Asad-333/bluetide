@@ -1,169 +1,221 @@
 {
     "metrics": [
         {
-            "label": "AVG ACCURACY",
-            "value": "94.8",
+            "label": "Overall Accuracy",
+            "value": 98.4,
             "unit": "%",
-            "change": "+1.2%",
-            "trend": "up"
+            "change": 1.2,
+            "trend": "up",
+            "sparkline": [
+                96,
+                96.5,
+                97.2,
+                97,
+                97.8,
+                98.2,
+                98.4
+            ]
         },
         {
-            "label": "TOTAL TOKENS",
-            "value": "1.28",
-            "unit": "M",
-            "change": "Target: 1.5M",
-            "trend": "stable"
+            "label": "Throughput",
+            "value": 1420,
+            "unit": "doc/h",
+            "change": -5,
+            "trend": "down",
+            "sparkline": [
+                1500,
+                1480,
+                1460,
+                1490,
+                1420,
+                1430,
+                1420
+            ]
         },
         {
-            "label": "PROCESSING TIME",
-            "value": "242",
-            "unit": "ms",
-            "change": "-12ms",
-            "trend": "down"
-        },
-        {
-            "label": "SUCCESS RATE",
-            "value": "99.2",
+            "label": "Confidence (Avg)",
+            "value": 94.2,
             "unit": "%",
-            "change": "Stable",
-            "trend": "stable"
+            "change": 2.1,
+            "trend": "up",
+            "sparkline": [
+                90,
+                91,
+                92,
+                91.5,
+                93,
+                93.8,
+                94.2
+            ]
+        },
+        {
+            "label": "HITL Rate",
+            "value": 4.8,
+            "unit": "%",
+            "change": -0.5,
+            "trend": "down",
+            "sparkline": [
+                6.2,
+                5.8,
+                5.5,
+                5.2,
+                5.0,
+                4.9,
+                4.8
+            ]
         }
     ],
-    "accuracy": [
+    "matrix": [
         {
-            "phase": "PHASE 1: EXTRACTION",
-            "english": 78,
-            "arabic": 62
-        },
-        {
-            "phase": "PHASE 2: TRANSFORMATION",
-            "english": 82,
-            "arabic": 74
-        },
-        {
-            "phase": "PHASE 3: VALIDATION",
-            "english": 95,
-            "arabic": 88
-        }
-    ],
-    "nodes": [
-        {
-            "label": "GPU Clusters",
-            "value": 70,
-            "color": "emerald"
-        },
-        {
-            "label": "CPU Nodes",
-            "value": 30,
-            "color": "cyan"
-        }
-    ],
-    "latency": [
-        {
-            "label": "OCR ENGINE",
-            "value": 145,
-            "target": 250
-        },
-        {
-            "label": "LLM INFER",
-            "value": 82,
-            "target": 250
-        },
-        {
-            "label": "IO SYNC",
-            "value": 15,
-            "target": 250
-        }
-    ],
-    "intelligence": [
-        {
-            "schema": "LEGALMASTER",
+            "schema": "Financial Audit",
             "languages": [
                 {
                     "code": "EN",
-                    "label": "ENGLISH",
-                    "value": 98.2
+                    "label": "English",
+                    "accuracy": 99.2,
+                    "latency": 182,
+                    "volume": 1240
                 },
                 {
                     "code": "AR",
-                    "label": "ARABIC",
-                    "value": 89.1
+                    "label": "Arabic",
+                    "accuracy": 94.8,
+                    "latency": 312,
+                    "volume": 840
                 },
                 {
                     "code": "HI",
-                    "label": "HINDI",
-                    "value": 76.4
-                },
-                {
-                    "code": "UR",
-                    "label": "URDU",
-                    "value": 82.3
-                },
-                {
-                    "code": "ES",
-                    "label": "SPANISH",
-                    "value": 95.4
+                    "label": "Hindi",
+                    "accuracy": 88.5,
+                    "latency": 450,
+                    "volume": 320
                 }
             ]
         },
         {
-            "schema": "FINANCIALAUDIT",
+            "schema": "Legal Master",
             "languages": [
                 {
                     "code": "EN",
-                    "label": "ENGLISH",
-                    "value": 99.5
+                    "label": "English",
+                    "accuracy": 98.5,
+                    "latency": 210,
+                    "volume": 980
                 },
                 {
                     "code": "AR",
-                    "label": "ARABIC",
-                    "value": 94.8
+                    "label": "Arabic",
+                    "accuracy": 91.2,
+                    "latency": 340,
+                    "volume": 620
                 },
                 {
                     "code": "HI",
-                    "label": "HINDI",
-                    "value": 88.2
+                    "label": "Hindi",
+                    "accuracy": 76.4,
+                    "latency": 520,
+                    "volume": 150
+                }
+            ]
+        },
+        {
+            "schema": "KYC Identity",
+            "languages": [
+                {
+                    "code": "EN",
+                    "label": "English",
+                    "accuracy": 99.8,
+                    "latency": 145,
+                    "volume": 2400
                 },
                 {
-                    "code": "UR",
-                    "label": "URDU",
-                    "value": 71.0
+                    "code": "AR",
+                    "label": "Arabic",
+                    "accuracy": 97.2,
+                    "latency": 260,
+                    "volume": 1100
                 },
                 {
-                    "code": "ES",
-                    "label": "SPANISH",
-                    "value": 97.1
+                    "code": "HI",
+                    "label": "Hindi",
+                    "accuracy": 92.1,
+                    "latency": 380,
+                    "volume": 580
                 }
             ]
         }
     ],
-    "stream": [
+    "confidenceDistribution": [
+        {
+            "range": "95-100",
+            "count": 1420,
+            "percentage": 65
+        },
+        {
+            "range": "90-95",
+            "count": 480,
+            "percentage": 22
+        },
+        {
+            "range": "80-90",
+            "count": 180,
+            "percentage": 8
+        },
+        {
+            "range": "70-80",
+            "count": 65,
+            "percentage": 3
+        },
+        {
+            "range": "<70",
+            "count": 42,
+            "percentage": 2
+        }
+    ],
+    "activity": [
         {
             "id": "1",
-            "timestamp": "14:22:15.802",
+            "timestamp": "14:22:15",
             "docId": "INV-88219-X",
             "type": "Invoice",
             "language": "EN",
             "confidence": 98.4,
-            "latency": 182
+            "status": "success",
+            "message": "Full extraction complete. Verified against schema."
         },
         {
             "id": "2",
-            "timestamp": "14:21:58.421",
+            "timestamp": "14:21:58",
             "docId": "CTR-4412-B",
             "type": "Contract",
             "language": "AR",
             "confidence": 91.2,
-            "latency": 312
+            "status": "warning",
+            "message": "Signature detected but low confidence in date field."
         },
         {
             "id": "3",
-            "timestamp": "14:20:11.005",
+            "timestamp": "14:20:11",
             "docId": "KYC-00129",
             "type": "Passport",
             "language": "UR",
-            "confidence": 85.7,
-            "latency": 445
+            "confidence": 65.7,
+            "status": "error",
+            "message": "OCR failure on encoded MRZ zone. Redirected to HITL."
+        }
+    ],
+    "insights": [
+        {
+            "id": "ins-1",
+            "type": "positive",
+            "text": "Accuracy for Arabic Legal documents has increased by 4.2% after model update.",
+            "timestamp": "2h ago"
+        },
+        {
+            "id": "ins-2",
+            "type": "neutral",
+            "text": "Hindi volume is up 12% this week; latency remains within target (450ms).",
+            "timestamp": "5h ago"
         }
     ]
 }

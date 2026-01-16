@@ -16,8 +16,7 @@ export const Route = createRootRoute({
         <DocumentProvider>
           <ChatProvider>
             <AnalyticsProvider>
-              <div className="flex h-screen flex-col font-sans antialiased overflow-hidden">
-                <Header />
+              <div className="flex h-screen w-screen flex-col font-sans antialiased overflow-hidden bg-background">
                 <AppShell>
                   <Outlet />
                 </AppShell>
