@@ -1,0 +1,169 @@
+{
+    "metrics": [
+        {
+            "label": "AVG ACCURACY",
+            "value": "94.8",
+            "unit": "%",
+            "change": "+1.2%",
+            "trend": "up"
+        },
+        {
+            "label": "TOTAL TOKENS",
+            "value": "1.28",
+            "unit": "M",
+            "change": "Target: 1.5M",
+            "trend": "stable"
+        },
+        {
+            "label": "PROCESSING TIME",
+            "value": "242",
+            "unit": "ms",
+            "change": "-12ms",
+            "trend": "down"
+        },
+        {
+            "label": "SUCCESS RATE",
+            "value": "99.2",
+            "unit": "%",
+            "change": "Stable",
+            "trend": "stable"
+        }
+    ],
+    "accuracy": [
+        {
+            "phase": "PHASE 1: EXTRACTION",
+            "english": 78,
+            "arabic": 62
+        },
+        {
+            "phase": "PHASE 2: TRANSFORMATION",
+            "english": 82,
+            "arabic": 74
+        },
+        {
+            "phase": "PHASE 3: VALIDATION",
+            "english": 95,
+            "arabic": 88
+        }
+    ],
+    "nodes": [
+        {
+            "label": "GPU Clusters",
+            "value": 70,
+            "color": "emerald"
+        },
+        {
+            "label": "CPU Nodes",
+            "value": 30,
+            "color": "cyan"
+        }
+    ],
+    "latency": [
+        {
+            "label": "OCR ENGINE",
+            "value": 145,
+            "target": 250
+        },
+        {
+            "label": "LLM INFER",
+            "value": 82,
+            "target": 250
+        },
+        {
+            "label": "IO SYNC",
+            "value": 15,
+            "target": 250
+        }
+    ],
+    "intelligence": [
+        {
+            "schema": "LEGALMASTER",
+            "languages": [
+                {
+                    "code": "EN",
+                    "label": "ENGLISH",
+                    "value": 98.2
+                },
+                {
+                    "code": "AR",
+                    "label": "ARABIC",
+                    "value": 89.1
+                },
+                {
+                    "code": "HI",
+                    "label": "HINDI",
+                    "value": 76.4
+                },
+                {
+                    "code": "UR",
+                    "label": "URDU",
+                    "value": 82.3
+                },
+                {
+                    "code": "ES",
+                    "label": "SPANISH",
+                    "value": 95.4
+                }
+            ]
+        },
+        {
+            "schema": "FINANCIALAUDIT",
+            "languages": [
+                {
+                    "code": "EN",
+                    "label": "ENGLISH",
+                    "value": 99.5
+                },
+                {
+                    "code": "AR",
+                    "label": "ARABIC",
+                    "value": 94.8
+                },
+                {
+                    "code": "HI",
+                    "label": "HINDI",
+                    "value": 88.2
+                },
+                {
+                    "code": "UR",
+                    "label": "URDU",
+                    "value": 71.0
+                },
+                {
+                    "code": "ES",
+                    "label": "SPANISH",
+                    "value": 97.1
+                }
+            ]
+        }
+    ],
+    "stream": [
+        {
+            "id": "1",
+            "timestamp": "14:22:15.802",
+            "docId": "INV-88219-X",
+            "type": "Invoice",
+            "language": "EN",
+            "confidence": 98.4,
+            "latency": 182
+        },
+        {
+            "id": "2",
+            "timestamp": "14:21:58.421",
+            "docId": "CTR-4412-B",
+            "type": "Contract",
+            "language": "AR",
+            "confidence": 91.2,
+            "latency": 312
+        },
+        {
+            "id": "3",
+            "timestamp": "14:20:11.005",
+            "docId": "KYC-00129",
+            "type": "Passport",
+            "language": "UR",
+            "confidence": 85.7,
+            "latency": 445
+        }
+    ]
+}

@@ -68,14 +68,21 @@ export function Header() {
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuLink
-                                    className={cn(
-                                        navigationMenuTriggerStyle(),
-                                        'h-10 px-4 transition-all duration-200 rounded-lg bg-transparent text-muted-foreground hover:bg-accent/60 hover:text-foreground'
+                                <Link to="/analytics">
+                                    {({ isActive }: { isActive: boolean }) => (
+                                        <NavigationMenuLink
+                                            className={cn(
+                                                navigationMenuTriggerStyle(),
+                                                'h-10 px-4 transition-all duration-200 rounded-lg',
+                                                isActive
+                                                    ? 'bg-primary/10 text-primary font-bold shadow-sm ring-1 ring-primary/20'
+                                                    : 'bg-transparent text-muted-foreground hover:bg-accent/60 hover:text-foreground'
+                                            )}
+                                        >
+                                            Analytics
+                                        </NavigationMenuLink>
                                     )}
-                                >
-                                    Analytics
-                                </NavigationMenuLink>
+                                </Link>
                             </NavigationMenuItem>
                         </NavigationMenuList>
                     </NavigationMenu>

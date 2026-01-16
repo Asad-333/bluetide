@@ -4,20 +4,28 @@ import { AppShell } from '@/shared/components/layout/AppShell'
 import { ThemeProvider } from '@/shared/components/theme-provider'
 import { DocumentProvider } from '@/features/documents/context'
 import { ChatProvider } from '@/features/chat/context'
+import { AnalyticsProvider } from '@/features/analytics/context'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 export const Route = createRootRoute({
   component: () => (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <DocumentProvider>
-        <ChatProvider>
-          <div className="flex min-h-screen flex-col font-sans antialiased">
-            <Header />
-            <AppShell>
-              <Outlet />
-            </AppShell>
-          </div>
-        </ChatProvider>
-      </DocumentProvider>
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <DocumentProvider>
+          <ChatProvider>
+            <AnalyticsProvider>
+              <div className="flex h-screen flex-col font-sans antialiased overflow-hidden">
+                <Header />
+                <AppShell>
+                  <Outlet />
+                </AppShell>
+              </div>
+            </AnalyticsProvider>
+          </ChatProvider>
+        </DocumentProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   ),
 })
